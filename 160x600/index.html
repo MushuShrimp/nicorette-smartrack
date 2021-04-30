@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title></title>
+  <script type="text/javascript">
+      var clickTag = 'https://www.google.com/';
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/MotionPathPlugin.min.js"></script>
+</head>
+<style type="text/css">
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #F6F6F6;
+}
+.default{
+  position: absolute;
+  left:-1px;
+  top:-1px;
+  width:160px;
+  height:600px;
+}
+#mainContainer {
+  cursor: pointer;
+  position: absolute;
+  width: 160px;
+  height: 600px;
+  border: 1px solid #000000;
+  background-color: #138468;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: none;
+}
+</style>
+<body>
+  <div id="mainContainer" onclick="window.open(window.clickTag)">
+    <img class="default" src="bg4.jpg" id="bg4">
+    <img class="default" src="bg3.jpg" id="bg3">
+    <img class="default" src="bg2.jpg" id="bg2">
+    <img class="default" src="phoneoverlay.png" id="phoneoverlay">
+    <img class="default" src="starburst.png" id="starburst">
+    <img class="default" src="bg1.jpg" id="bg1">
+    <img class="default" src="t1.png" id="t1">
+    <img class="default" src="newtag.png" id="newtag">
+    <img class="default" src="t2a.png" id="t2a">
+    <img class="default" src="t2b.png" id="t2b">
+    <img class="default" src="t3.png" id="t3">
+    <img class="default" src="t4a.png" id="t4a">
+    <img class="default" src="t4b.png" id="t4b">
+    <img class="default" src="pack.png" id="pack">
+    <img class="default" src="legal.png" id="legal">
+    <img class="default" src="cta.png" id="cta">
+  </div>
+  <script type="text/javascript">
+
+  window.onload = function () {
+    this.tl = gsap.timeline({ paused: true });
+    gsap.set([bg1], {width:160, height:300});
+    gsap.set([bg2,bg3], {x:160, width:160, height:300});
+
+    tl.from(newtag, 0.5, {x:-100, ease:Quad.easeOut})
+      .from(t1, 0.5, {alpha:0, ease:Quad.easeInOut}, "-=0.25")
+
+      .to([bg1,newtag,t1,bg2], 0.5, {x:"-=160", ease:Quad.easeInOut}, "+=2")
+      .from(t2a, 0.5, {alpha:0, ease:Quad.easeInOut})
+      .from(t2b, 0.5, {alpha:0, ease:Quad.easeInOut})
+      .from([phoneoverlay], 0.5, {alpha:0, ease:Quad.easeInOut}, "+=1.5")
+      .from(starburst, 0.5, {scale:0.6, alpha:0, transformOrigin:"111px 50px", ease:Back.easeOut}, "-=0.25")
+
+      .to([bg2,starburst,phoneoverlay,t2a,t2b,bg3], 0.5, {x:"-=160", ease:Quad.easeInOut}, "+=2")
+      .from(t3, 0.5, {alpha:0, ease:Quad.easeInOut})
+
+      .to([bg3,t3], 0.75, {alpha:0, ease:Quad.easeInOut}, "+=2")
+      .from(pack, 0.75, {alpha:0, ease:Quad.easeInOut}, "-=0.5")
+      .from(t4a, 0.5, {x:"-=150", alpha:0, ease:Quad.easeInOut}, "-=0.25")
+      .from(t4b, 0.5, {x:"-=150", alpha:0, ease:Quad.easeInOut}, "-=0.25")
+      .from(cta, 0.5, {alpha:0, ease:Quad.easeInOut}, "+=0.25")
+      .from(legal, 0.5, {alpha:0, ease:Quad.easeInOut})
+    this.els =  { ad: document.getElementById('container')};
+    mainContainer.style.display = "block";
+    tl.play();
+
+
+    console.log(tl.totalDuration());
+  }
+</script>
+</body>
+</html>
