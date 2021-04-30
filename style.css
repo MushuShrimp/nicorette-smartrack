@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'MrEaves';
+    src: url('https://review.bbomn.io/assets/fonts/MrEavesModOT-Reg.eot?#iefix') format('embedded-opentype'),
+         url('https://review.bbomn.io/assets/fonts/MrEavesModOT-Reg.otf') format('opentype'),
+         url('https://review.bbomn.io/assets/fonts/MrEavesModOT-Reg.woff') format('woff'),
+         url('https://review.bbomn.io/assets/fonts/MrEavesModOT-Reg.ttf') format('truetype'),
+         url('https://review.bbomn.io/assets/fonts/MrEavesModOT-Reg.svg#MrEavesModOT-Reg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MrsEaves';
+    src: url('https://review.bbomn.io/assets/fonts/MrsEavesXLSerifOT-Reg.eot?#iefix') format('embedded-opentype'),
+         url('https://review.bbomn.io/assets/fonts/MrsEavesXLSerifOT-Reg.otf') format('opentype'),
+         url('https://review.bbomn.io/assets/fonts/MrsEavesXLSerifOT-Reg.woff') format('woff'),
+         url('https://review.bbomn.io/assets/fonts/MrsEavesXLSerifOT-Reg.ttf') format('truetype'),
+         url('https://review.bbomn.io/assets/fonts/MrsEavesXLSerifOT-Reg.svg#MrsEavesXLSerifOT-Reg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html, #Stage {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: black;
+}
+
+* {
+    position: absolute;
+    outline: none;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    transform: translate3d(0, 0, 0);
+}
+
+span, br, a {
+    position: relative;
+}
+
+.mr {
+    font-family: 'MrEaves';
+}
+
+.mrs {
+    font-family: 'MrsEaves';
+    left: -0.025rem;
+}
